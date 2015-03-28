@@ -26,3 +26,17 @@ To disable web storage backup to iCloud, set the BackupWebStorage preference to 
 
 2015-03-28 17:59:37.895 BusDetective[71006:13980578] Resetting plugins due to page load.
 2015-03-28 17:59:38.284 BusDetective[71006:13980578] Finished load of: http://busdetective.com/
+2015-03-28 18:12:10.278 BusDetective[71883:13991921] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/rockwood/Library/Developer/CoreSimulator/Devices/C60A5B04-0FE7-4D6E-8BEC-8BACBE246D0F/data/Containers/Data/Application/C9B6EE92-B4EB-4519-96CC-C6AD6FDB0DB6/Library/Cookies/Cookies.binarycookies
+2015-03-28 18:12:10.474 BusDetective[71883:13991921] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-28 18:12:10.475 BusDetective[71883:13991921] Multi-tasking -> Device: YES, App: YES
+2015-03-28 18:12:10.479 BusDetective[71883:13991921] Unlimited access to network resources
+2015-03-28 18:12:10.483 BusDetective[71883:13991921] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-28 18:12:10.656 BusDetective[71883:13991921] Resetting plugins due to page load.
+2015-03-28 18:12:11.042 BusDetective[71883:13991921] Finished load of: http://busdetective.com/
