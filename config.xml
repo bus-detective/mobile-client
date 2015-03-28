@@ -4,6 +4,11 @@
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
     <content src="http://busdetective.com" />
-    <icon src="www/icon.png" />
     <access origin="*" />
+    <icon src="www/icon.png" />
+    <preference name="EnableViewportScale" value="true"/>
+    <preference name="Orientation" value="portrait" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#444444" />
+    <preference name="StatusBarStyle" value="lightcontent" />
 </widget>
