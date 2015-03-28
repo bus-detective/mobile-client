@@ -18,12 +18,9 @@
         <param name="ios-package" value="CDVLocation" />
     </feature>
     <name>BusDetective</name>
-    <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
+    <description>Find your bus!</description>
+    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
     <content src="http://busdetective.com" />
+    <icon src="www/icon.png" />
     <access origin="*" />
 </widget>

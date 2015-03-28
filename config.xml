@@ -4,5 +4,6 @@
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
     <content src="http://busdetective.com" />
+    <icon src="www/icon.png" />
     <access origin="*" />
 </widget>
