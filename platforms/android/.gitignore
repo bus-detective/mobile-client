@@ -5,7 +5,8 @@ local.properties
 /gradlew.bat
 /gradle
 /.gradle
-/CordovaLib
+/CordovaLib/build
+/CordovaLib/CordovaLib.iml
 # Ant builds
 ant-build
 ant-gen
