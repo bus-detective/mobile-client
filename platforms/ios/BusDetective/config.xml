@@ -26,6 +26,7 @@
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
     <content src="http://busdetective.com" />
+    <allow-navigation href="*://*.busdetective.com/*" />
     <access origin="*" />
     <icon src="www/icon.png" />
     <icon height="180" src="www/icon-build/icon-60@3x.png" width="180" />

@@ -11,5 +11,13 @@
             "url": "https://github.com/apache/cordova-plugin-statusbar",
             "subdir": "."
         }
+    },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

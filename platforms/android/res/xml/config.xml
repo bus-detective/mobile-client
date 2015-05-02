@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.teamgaslight.busdetective" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>BusDetective</name>
+    <description>Find your bus!</description>
+    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
+    <content src="http://busdetective.com" />
+    <allow-navigation href="*://*.busdetective.com/*" />
+    <access origin="*" />
+    <icon src="www/icon.png" />
+    <icon height="180" src="www/icon-build/icon-60@3x.png" width="180" />
+    <icon height="60" src="www/icon-build/icon-60.png" width="60" />
+    <icon height="120" src="www/icon-build/icon-60@2x.png" width="120" />
+    <icon height="76" src="www/icon-build/icon-76.png" width="76" />
+    <icon height="152" src="www/icon-build/icon-76@2x.png" width="152" />
+    <icon height="40" src="www/icon-build/icon-40.png" width="40" />
+    <icon height="80" src="www/icon-build/icon-40@2x.png" width="80" />
+    <icon height="57" src="www/icon-build/icon.png" width="57" />
+    <icon height="114" src="www/icon-build/icon@2x.png" width="114" />
+    <icon height="72" src="www/icon-build/icon-72.png" width="72" />
+    <icon height="144" src="www/icon-build/icon-72@2x.png" width="144" />
+    <icon height="29" src="www/icon-build/icon-small.png" width="29" />
+    <icon height="58" src="www/icon-build/icon-small@2x.png" width="58" />
+    <icon height="50" src="www/icon-build/icon-50.png" width="50" />
+    <icon height="100" src="www/icon-build/icon-50@2x.png" width="100" />
+    <preference name="EnableViewportScale" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#444444" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+</widget>
