@@ -44,6 +44,11 @@
     <icon height="58" src="www/icon-build/icon-small@2x.png" width="58" />
     <icon height="50" src="www/icon-build/icon-50.png" width="50" />
     <icon height="100" src="www/icon-build/icon-50@2x.png" width="100" />
+    <icon height="48" src="www/icon-build/icon-48.png" width="48" />
+    <icon height="96" src="www/icon-build/icon-96.png" width="96" />
+    <icon height="144" src="www/icon-build/icon-144.png" width="144" />
+    <icon height="192" src="www/icon-build/icon-192.png" width="192" />
+    <icon height="512" src="www/icon-build/icon-512.png" width="512" />
     <preference name="EnableViewportScale" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
