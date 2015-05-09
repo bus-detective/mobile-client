@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.teamgaslight.busdetective" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.teamgaslight.busdetective" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="false" />
@@ -28,30 +28,35 @@
     <content src="http://busdetective.com" />
     <allow-navigation href="*://*.busdetective.com/*" />
     <access origin="*" />
-    <icon src="www/icon.png" />
-    <icon height="180" src="www/icon-build/icon-60@3x.png" width="180" />
-    <icon height="60" src="www/icon-build/icon-60.png" width="60" />
-    <icon height="120" src="www/icon-build/icon-60@2x.png" width="120" />
-    <icon height="76" src="www/icon-build/icon-76.png" width="76" />
-    <icon height="152" src="www/icon-build/icon-76@2x.png" width="152" />
-    <icon height="40" src="www/icon-build/icon-40.png" width="40" />
-    <icon height="80" src="www/icon-build/icon-40@2x.png" width="80" />
-    <icon height="57" src="www/icon-build/icon.png" width="57" />
-    <icon height="114" src="www/icon-build/icon@2x.png" width="114" />
-    <icon height="72" src="www/icon-build/icon-72.png" width="72" />
-    <icon height="144" src="www/icon-build/icon-72@2x.png" width="144" />
-    <icon height="29" src="www/icon-build/icon-small.png" width="29" />
-    <icon height="58" src="www/icon-build/icon-small@2x.png" width="58" />
-    <icon height="50" src="www/icon-build/icon-50.png" width="50" />
-    <icon height="100" src="www/icon-build/icon-50@2x.png" width="100" />
-    <icon height="48" src="www/icon-build/icon-48.png" width="48" />
-    <icon height="96" src="www/icon-build/icon-96.png" width="96" />
-    <icon height="144" src="www/icon-build/icon-144.png" width="144" />
-    <icon height="192" src="www/icon-build/icon-192.png" width="192" />
-    <icon height="512" src="www/icon-build/icon-512.png" width="512" />
-    <preference name="EnableViewportScale" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#444444" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="EnableViewportScale" value="true" />
+    <icon src="icon.png" />
+    <icon height="180" src="resources/icon/icon-60@3x.png" width="180" />
+    <icon height="60" src="resources/icon/icon-60.png" width="60" />
+    <icon height="120" src="resources/icon/icon-60@2x.png" width="120" />
+    <icon height="76" src="resources/icon/icon-76.png" width="76" />
+    <icon height="152" src="resources/icon/icon-76@2x.png" width="152" />
+    <icon height="40" src="resources/icon/icon-40.png" width="40" />
+    <icon height="80" src="resources/icon/icon-40@2x.png" width="80" />
+    <icon height="57" src="resources/icon/icon.png" width="57" />
+    <icon height="114" src="resources/icon/icon@2x.png" width="114" />
+    <icon height="72" src="resources/icon/icon-72.png" width="72" />
+    <icon height="144" src="resources/icon/icon-72@2x.png" width="144" />
+    <icon height="29" src="resources/icon/icon-small.png" width="29" />
+    <icon height="58" src="resources/icon/icon-small@2x.png" width="58" />
+    <icon height="48" src="resources/icon/icon-48.png" width="48" />
+    <icon height="96" src="resources/icon/icon-96.png" width="96" />
+    <icon height="144" src="resources/icon/icon-144.png" width="144" />
+    <icon height="192" src="resources/icon/icon-192.png" width="192" />
+    <icon height="512" src="resources/icon/icon-512.png" width="512" />
+    <splash height="480" src="resources/splash/Default~iphone.png" width="320" />
+    <splash height="960" src="resources/splash/Default@2x~iphone.png" width="640" />
+    <splash height="1024" src="resources/splash/Default-Portrait~ipad.png" width="768" />
+    <splash height="2048" src="resources/splash/Default-Portrait@2x~ipad.png" width="1536" />
+    <splash height="1136" src="resources/splash/Default-568h@2x~iphone.png" width="640" />
+    <splash height="1334" src="resources/splash/Default-667h.png" width="750" />
+    <splash height="2208" src="resources/splash/Default-736h.png" width="1242" />
 </widget>
