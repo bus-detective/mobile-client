@@ -9,6 +9,14 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <splash density="hdpi" src="resources/splash/splash-android-hdpi.9.png" />
+    <splash density="ldpi" src="resources/splash/splash-android-ldpi.9.png" />
+    <splash density="mdpi" src="resources/splash/splash-android-mdpi.9.png" />
+    <splash density="xhdpi" src="resources/splash/splash-android-xhdpi.9.png" />
     <name>BusDetective</name>
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
@@ -39,11 +47,6 @@
     <icon height="144" src="resources/icon/icon-144.png" width="144" />
     <icon height="192" src="resources/icon/icon-192.png" width="192" />
     <icon height="512" src="resources/icon/icon-512.png" width="512" />
-    <splash height="480" src="resources/splash/Default~iphone.png" width="320" />
-    <splash height="960" src="resources/splash/Default@2x~iphone.png" width="640" />
-    <splash height="1024" src="resources/splash/Default-Portrait~ipad.png" width="768" />
-    <splash height="2048" src="resources/splash/Default-Portrait@2x~ipad.png" width="1536" />
-    <splash height="1136" src="resources/splash/Default-568h@2x~iphone.png" width="640" />
-    <splash height="1334" src="resources/splash/Default-667h.png" width="750" />
-    <splash height="2208" src="resources/splash/Default-736h.png" width="1242" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
 </widget>

@@ -42,6 +42,7 @@
 		B10BED53469D4C2080B75D8E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9489908BBAE248E09086C631 /* CoreLocation.framework */; };
 		C545D0524FAD4A64BAF99D83 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C44298EE9034470A6FA95DA /* CDVLocation.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		DC5EAA871F3F40A1B9F7B27C /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DA363CEECA8B41C3A7A43484 /* CDVSplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F6F201171217430E8BC15789 /* CDVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLocation.h; path = org.apache.cordova.geolocation/CDVLocation.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = BusDetective/config.xml; sourceTree = "<group>"; };
+		DA363CEECA8B41C3A7A43484 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		4445CEB887C44D8195BD5A07 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,8 @@
 				F6F201171217430E8BC15789 /* CDVLocation.h */,
 				501B898E2BF64585BB4FA8E6 /* CDVStatusBar.m */,
 				58F5396C4EF2484EA974F044 /* CDVStatusBar.h */,
+				DA363CEECA8B41C3A7A43484 /* CDVSplashScreen.m */,
+				4445CEB887C44D8195BD5A07 /* CDVSplashScreen.h */,
 			);
 			name = Plugins;
 			path = BusDetective/Plugins;
@@ -405,6 +410,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				C545D0524FAD4A64BAF99D83 /* CDVLocation.m in Sources */,
 				35D6FDF86FE74B1A84E854CF /* CDVStatusBar.m in Sources */,
+				DC5EAA871F3F40A1B9F7B27C /* CDVSplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
