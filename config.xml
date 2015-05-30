@@ -4,7 +4,7 @@
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
 
-    <content src="http://busdetective.com" />
+    <content src="http://app.busdetective.com" />
 
     <!-- Android cannot connect to the website without it being whitelisted -->
     <allow-navigation href="*://*.busdetective.com/*" />

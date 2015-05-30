@@ -36,7 +36,7 @@
     <name>BusDetective</name>
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
-    <content src="http://busdetective.com" />
+    <content src="http://app.busdetective.com" />
     <allow-navigation href="*://*.busdetective.com/*" />
     <access origin="*" />
     <preference name="Orientation" value="portrait" />
