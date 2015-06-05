@@ -14,6 +14,7 @@ var cordovaWrapper = {
 
 var busDetectiveApp = {
   appWindow: null,
+  hasAppLoaded: false,
 
   initialize: function () {
     var ref = cordova.InAppBrowser.open('http://app.busdetective.com', '_blank', 'location=no,hidden=yes,toolbar=no');
@@ -26,13 +27,25 @@ var busDetectiveApp = {
     ref.addEventListener('loadstop', busDetectiveApp.onAppLoaded, false);
   },
 
+  injectAppScripts: function (ref) {
+    ref.executeScript({
+      file: 'js/bus-detective-cordova.js'
+    });
+  },
+
   onAppLoaded: function () {
-    busDetectiveApp.appWindow.show();
+    // This function runs twice for some reason, add a flag to run only once
+    if (!busDetectiveApp.hasAppLoaded) {
+      busDetectiveApp.injectAppScripts(busDetectiveApp.appWindow);
+      busDetectiveApp.appWindow.show();
+      busDetectiveApp.hasAppLoaded = true;
+    }
   },
 
   onExit: function () {
     // Close wrapper if they back out of the app
     navigator.app.exitApp();
+    busDetectiveApp.hasAppLoaded = false;
   }
 };
 
