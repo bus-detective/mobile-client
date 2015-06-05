@@ -16,7 +16,7 @@ var busDetectiveApp = {
   appWindow: null,
 
   initialize: function () {
-    var ref = cordova.InAppBrowser.open('http://app.busdetective.com', '_blank', 'location=no,hidden=true');
+    var ref = cordova.InAppBrowser.open('http://app.busdetective.com', '_blank', 'location=no,hidden=yes,toolbar=no');
     this.bindEvents(ref);
     busDetectiveApp.appWindow = ref;
   },
@@ -28,6 +28,7 @@ var busDetectiveApp = {
 
   onAppLoaded: function () {
     busDetectiveApp.appWindow.show();
+    cordova.InAppBrowser.open('http://teamgaslight.com', '_system');
   },
 
   onExit: function () {
