@@ -1,63 +1,51 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.teamgaslight.busdetective" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>BusDetective</name>
-    <description>Find your bus!</description>
-    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
+  <name>BusDetective</name>
+  <description>Find your bus!</description>
+  <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
 
-    <content src="http://app.busdetective.com" />
+  <content src="index.html" />
+  <access origin="*" />
 
-    <!-- Android cannot connect to the website without it being whitelisted -->
-    <allow-navigation href="*://*.busdetective.com/*" />
+  <preference name="Orientation" value="portrait" />
+  <preference name="StatusBarOverlaysWebView" value="false" />
+  <preference name="StatusBarBackgroundColor" value="#444444" />
+  <preference name="StatusBarStyle" value="lightcontent" />
+  <preference name="EnableViewportScale" value="true"/>
 
-    <access origin="*" />
+  <icon src="icon.png" />
 
-    <preference name="Orientation" value="portrait" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#444444" />
-    <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="EnableViewportScale" value="true"/>
+  <!-- Icons  -->
+  <icon src="resources/icon/icon-60@3x.png" width="180" height="180" />
+  <icon src="resources/icon/icon-60.png" width="60" height="60" />
+  <icon src="resources/icon/icon-60@2x.png" width="120" height="120" />
+  <icon src="resources/icon/icon-76.png" width="76" height="76" />
+  <icon src="resources/icon/icon-76@2x.png" width="152" height="152" />
+  <icon src="resources/icon/icon-40.png" width="40" height="40" />
+  <icon src="resources/icon/icon-40@2x.png" width="80" height="80" />
+  <icon src="resources/icon/icon.png" width="57" height="57" />
+  <icon src="resources/icon/icon@2x.png" width="114" height="114" />
+  <icon src="resources/icon/icon-72.png" width="72" height="72" />
+  <icon src="resources/icon/icon-72@2x.png" width="144" height="144" />
+  <icon src="resources/icon/icon-small.png" width="29" height="29" />
+  <icon src="resources/icon/icon-small@2x.png" width="58" height="58" />
+  <icon src="resources/icon/icon-48.png" width="48" height="48" />
+  <icon src="resources/icon/icon-96.png" width="96" height="96" />
+  <icon src="resources/icon/icon-144.png" width="144" height="144" />
+  <icon src="resources/icon/icon-192.png" width="192" height="192" />
+  <icon src="resources/icon/icon-512.png" width="512" height="512" />
 
-    <icon src="icon.png" />
-
-    <!-- Icons  -->
-    <icon src="resources/icon/icon-60@3x.png" width="180" height="180" />
-    <icon src="resources/icon/icon-60.png" width="60" height="60" />
-    <icon src="resources/icon/icon-60@2x.png" width="120" height="120" />
-    <icon src="resources/icon/icon-76.png" width="76" height="76" />
-    <icon src="resources/icon/icon-76@2x.png" width="152" height="152" />
-    <icon src="resources/icon/icon-40.png" width="40" height="40" />
-    <icon src="resources/icon/icon-40@2x.png" width="80" height="80" />
-    <icon src="resources/icon/icon.png" width="57" height="57" />
-    <icon src="resources/icon/icon@2x.png" width="114" height="114" />
-    <icon src="resources/icon/icon-72.png" width="72" height="72" />
-    <icon src="resources/icon/icon-72@2x.png" width="144" height="144" />
-    <icon src="resources/icon/icon-small.png" width="29" height="29" />
-    <icon src="resources/icon/icon-small@2x.png" width="58" height="58" />
-    <icon src="resources/icon/icon-48.png" width="48" height="48" />
-    <icon src="resources/icon/icon-96.png" width="96" height="96" />
-    <icon src="resources/icon/icon-144.png" width="144" height="144" />
-    <icon src="resources/icon/icon-192.png" width="192" height="192" />
-    <icon src="resources/icon/icon-512.png" width="512" height="512" />
-
-    <!-- Splash Screens -->
-    <platform name="ios">
-      <splash src="resources/splash/Default~iphone.png" width="320" height="480"/>
-      <splash src="resources/splash/Default@2x~iphone.png" width="640" height="960"/>
-      <splash src="resources/splash/Default-Portrait~ipad.png" width="768" height="1024"/>
-      <splash src="resources/splash/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
-      <splash src="resources/splash/Default-568h@2x~iphone.png" width="640" height="1136"/>
-      <splash src="resources/splash/Default-667h.png" width="750" height="1334"/>
-      <splash src="resources/splash/Default-736h.png" width="1242" height="2208"/>
-    </platform>
-
-    <!-- Android Splash Screens -->
-    <platform name="android">
-      <splash src="resources/splash/splash-android-hdpi.9.png" density="hdpi"/>
-      <splash src="resources/splash/splash-android-ldpi.9.png" density="ldpi"/>
-      <splash src="resources/splash/splash-android-mdpi.9.png" density="mdpi"/>
-      <splash src="resources/splash/splash-android-xhdpi.9.png" density="xhdpi"/>
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <platform name="android">
+      <allow-intent href="market:*" />
   </platform>
-
-  <preference name="SplashScreen" value="screen" />
-  <preference name="SplashScreenDelay" value="3000" />
+  <platform name="ios">
+      <allow-intent href="itms:*" />
+      <allow-intent href="itms-apps:*" />
+  </platform>
 </widget>

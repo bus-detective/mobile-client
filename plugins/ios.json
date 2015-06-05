@@ -41,7 +41,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -69,7 +69,7 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.teamgaslight.busdetective"
         },
-        "cordova-plugin-splashscreen": {
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.teamgaslight.busdetective"
         }
     },

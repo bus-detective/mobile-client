@@ -20,10 +20,10 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-splashscreen": {
+    "cordova-plugin-inappbrowser": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-splashscreen"
+            "id": "cordova-plugin-inappbrowser"
         },
         "is_top_level": true,
         "variables": {}

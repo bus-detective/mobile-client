@@ -9,19 +9,14 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-        <param name="onload" value="true" />
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
-    <splash density="hdpi" src="resources/splash/splash-android-hdpi.9.png" />
-    <splash density="ldpi" src="resources/splash/splash-android-ldpi.9.png" />
-    <splash density="mdpi" src="resources/splash/splash-android-mdpi.9.png" />
-    <splash density="xhdpi" src="resources/splash/splash-android-xhdpi.9.png" />
+    <allow-intent href="market:*" />
     <name>BusDetective</name>
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
-    <content src="http://app.busdetective.com" />
-    <allow-navigation href="*://*.busdetective.com/*" />
+    <content src="index.html" />
     <access origin="*" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
@@ -47,6 +42,10 @@
     <icon height="144" src="resources/icon/icon-144.png" width="144" />
     <icon height="192" src="resources/icon/icon-192.png" width="192" />
     <icon height="512" src="resources/icon/icon-512.png" width="512" />
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
 </widget>

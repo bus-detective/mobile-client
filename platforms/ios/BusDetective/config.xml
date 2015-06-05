@@ -22,22 +22,15 @@
         <param name="onload" value="true" />
     </feature>
     <preference name="StatusBarOverlaysWebView" value="true" />
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen" />
-        <param name="onload" value="true" />
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
-    <splash height="480" src="resources/splash/Default~iphone.png" width="320" />
-    <splash height="960" src="resources/splash/Default@2x~iphone.png" width="640" />
-    <splash height="1024" src="resources/splash/Default-Portrait~ipad.png" width="768" />
-    <splash height="2048" src="resources/splash/Default-Portrait@2x~ipad.png" width="1536" />
-    <splash height="1136" src="resources/splash/Default-568h@2x~iphone.png" width="640" />
-    <splash height="1334" src="resources/splash/Default-667h.png" width="750" />
-    <splash height="2208" src="resources/splash/Default-736h.png" width="1242" />
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
     <name>BusDetective</name>
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
-    <content src="http://app.busdetective.com" />
-    <allow-navigation href="*://*.busdetective.com/*" />
+    <content src="index.html" />
     <access origin="*" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
@@ -63,6 +56,10 @@
     <icon height="144" src="resources/icon/icon-144.png" width="144" />
     <icon height="192" src="resources/icon/icon-192.png" width="192" />
     <icon height="512" src="resources/icon/icon-512.png" width="512" />
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
 </widget>

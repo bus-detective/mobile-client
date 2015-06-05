@@ -31,7 +31,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -49,7 +49,7 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.teamgaslight.busdetective"
         },
-        "cordova-plugin-splashscreen": {
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.teamgaslight.busdetective"
         }
     },
