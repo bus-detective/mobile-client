@@ -31,6 +31,8 @@ var busDetectiveApp = {
     ref.executeScript({
       file: 'js/bus-detective-cordova.js'
     });
+
+    webLinkOpener(ref);
   },
 
   onAppLoaded: function () {
@@ -47,6 +49,28 @@ var busDetectiveApp = {
     navigator.app.exitApp();
     busDetectiveApp.hasAppLoaded = false;
   }
+};
+
+var webLinkOpener = function (ref) {
+  var checkForLinkToOpen = function () {
+    ref.executeScript({
+      code: 'window.cordovaWrapper.openLink'
+    }, function (value) {
+      var url = value[0];
+      if (url) {
+        openLink(value[0]);
+        ref.executeScript({
+          code: 'window.cordovaWrapper.openLink=null'
+        });
+      }
+    });
+  };
+
+  var openLink = function (url) {
+    cordova.InAppBrowser.open(url, '_system');
+  };
+
+  setInterval(checkForLinkToOpen, 500);
 };
 
 cordovaWrapper.initialize();

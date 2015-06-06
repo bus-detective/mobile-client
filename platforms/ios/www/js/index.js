@@ -17,11 +17,8 @@ var busDetectiveApp = {
   hasAppLoaded: false,
 
   initialize: function () {
-    // var ref = cordova.InAppBrowser.open('http://app.busdetective.com', '_blank', 'location=no,hidden=yes,toolbar=no');
-    var ref = cordova.InAppBrowser.open('http://artemis:4200/', '_blank', 'location=no,hidden=yes,toolbar=no');
-
+    var ref = cordova.InAppBrowser.open('http://app.busdetective.com', '_blank', 'location=no,hidden=yes,toolbar=no');
     this.bindEvents(ref);
-
     busDetectiveApp.appWindow = ref;
   },
 
@@ -34,9 +31,12 @@ var busDetectiveApp = {
     ref.executeScript({
       file: 'js/bus-detective-cordova.js'
     });
+
+    webLinkOpener(ref);
   },
 
   onAppLoaded: function () {
+    // This function runs twice for some reason, add a flag to run only once
     if (!busDetectiveApp.hasAppLoaded) {
       busDetectiveApp.injectAppScripts(busDetectiveApp.appWindow);
       busDetectiveApp.appWindow.show();
@@ -49,6 +49,28 @@ var busDetectiveApp = {
     navigator.app.exitApp();
     busDetectiveApp.hasAppLoaded = false;
   }
+};
+
+var webLinkOpener = function (ref) {
+  var checkForLinkToOpen = function () {
+    ref.executeScript({
+      code: 'window.cordovaWrapper.openLink'
+    }, function (value) {
+      var url = value[0];
+      if (url) {
+        openLink(value[0]);
+        ref.executeScript({
+          code: 'window.cordovaWrapper.openLink=null'
+        });
+      }
+    });
+  };
+
+  var openLink = function (url) {
+    cordova.InAppBrowser.open(url, '_system');
+  };
+
+  setInterval(checkForLinkToOpen, 500);
 };
 
 cordovaWrapper.initialize();
