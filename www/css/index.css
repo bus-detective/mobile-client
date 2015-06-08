@@ -1,0 +1,57 @@
+#bus-detective{
+  width: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#Left_Eye{
+  transform-origin: 11.425% 40.358% 0;
+  -webkit-transform-origin: 11.425% 40.358% 0;
+  animation: wee_blink 4s linear infinite;
+  -webkit-animation: blink 4s linear infinite;
+}
+
+#Right_Eye{
+  transform-origin: 11.425% 40.358% 0;
+  -webkit-transform-origin: 11.425% 40.358% 0;
+  animation: wee_blink 4s linear infinite;
+  -webkit-animation: blink 4s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    transform: scaleY(1); }
+
+  48% {
+    transform: scaleY(1); }
+
+  50% {
+    transform: scaleY(0.1); }
+
+  52% {
+    transform: scaleY(1); }
+
+  100% {
+    transform: scaleY(1); }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    -webkit-transform: scaleY(1); }
+
+  48% {
+    -webkit-transform: scaleY(1); }
+
+  50% {
+    -webkit-transform: scaleY(0.1); }
+
+  52% {
+    -webkit-transform: scaleY(1); }
+
+  100% {
+    -webkit-transform: scaleY(1); }
+}
