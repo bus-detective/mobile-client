@@ -19,6 +19,61 @@ var androidSplashScreens = [
   }
 ];
 
+var iosIcons = [
+  {
+    name: 'icon',
+    size: 57
+  },
+  {
+    name: 'icon@2x',
+    size: 114
+  },
+  {
+    name: 'icon-40',
+    size: 40
+  },
+  {
+    name: 'icon-40@2x',
+    size: 80
+  },
+  {
+    name: 'icon-60',
+    size: 60
+  },
+  {
+    name: 'icon-60@2x',
+    size: 120
+  },
+  {
+    name: 'icon-60@3x',
+    size: 180
+  },
+  {
+    name: 'icon-72',
+    size: 72
+  },
+  {
+    name: 'icon-72@2x',
+    size: 144
+  },
+  {
+    name: 'icon-76',
+    size: 76
+  },
+  {
+    name: 'icon-76@2x',
+    size: 156
+  },
+  {
+    name: 'icon-small',
+    size: 29
+  },
+  {
+    name: 'icon-small@2x',
+    size: 58
+  }
+];
+
 var lwip = require('lwip');
 var transparent = { r: 255, g: 255, b: 255, a: 0 };
 
@@ -69,7 +124,27 @@ function generateAndroidSplashScreen (originalImage, index) {
   });
 }
 
+function generateIosIcons (originalImage, index) {
+  if (index === iosIcons.length) {
+    return;
+  }
+
+  var icon = iosIcons[index];
+
+  originalImage.clone(function (err, image) {
+    image.batch()
+      .resize(icon.size, icon.size, 'cubic')
+      .writeFile('resources/icon/ios/' + icon.name + '.png', function (err) {
+        console.log(err);
+        generateIosIcons(originalImage, index + 1);
+      });
+  });
+}
+
 lwip.open('splash.png', function (err, image) {
-  var i;
   generateAndroidSplashScreen(image, 0);
+});
+
+lwip.open('ios-icon.png', function (err, image) {
+  generateIosIcons(image, 0);
 });

@@ -33,6 +33,19 @@
     <splash height="1136" src="resources/splash/Default-568h@2x~iphone.png" width="640" />
     <splash height="1334" src="resources/splash/Default-667h.png" width="750" />
     <splash height="2208" src="resources/splash/Default-736h.png" width="1242" />
+    <icon height="57" src="resources/icon/ios/icon.png" width="57" />
+    <icon height="114" src="resources/icon/ios/icon@2x.png" width="114" />
+    <icon height="40" src="resources/icon/ios/icon-40.png" width="40" />
+    <icon height="80" src="resources/icon/ios/icon-40@2x.png" width="80" />
+    <icon height="180" src="resources/icon/ios/icon-60@3x.png" width="180" />
+    <icon height="60" src="resources/icon/ios/icon-60.png" width="60" />
+    <icon height="120" src="resources/icon/ios/icon-60@2x.png" width="120" />
+    <icon height="76" src="resources/icon/ios/icon-76.png" width="76" />
+    <icon height="152" src="resources/icon/ios/icon-76@2x.png" width="152" />
+    <icon height="72" src="resources/icon/ios/icon-72.png" width="72" />
+    <icon height="144" src="resources/icon/ios/icon-72@2x.png" width="144" />
+    <icon height="29" src="resources/icon/ios/icon-small.png" width="29" />
+    <icon height="58" src="resources/icon/ios/icon-small@2x.png" width="58" />
     <name>BusDetective</name>
     <description>Find your bus!</description>
     <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
@@ -44,25 +57,7 @@
     <preference name="StatusBarBackgroundColor" value="#444444" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="EnableViewportScale" value="true" />
-    <icon src="icon.png" />
-    <icon height="180" src="resources/icon/icon-60@3x.png" width="180" />
-    <icon height="60" src="resources/icon/icon-60.png" width="60" />
-    <icon height="120" src="resources/icon/icon-60@2x.png" width="120" />
-    <icon height="76" src="resources/icon/icon-76.png" width="76" />
-    <icon height="152" src="resources/icon/icon-76@2x.png" width="152" />
-    <icon height="40" src="resources/icon/icon-40.png" width="40" />
-    <icon height="80" src="resources/icon/icon-40@2x.png" width="80" />
-    <icon height="57" src="resources/icon/icon.png" width="57" />
-    <icon height="114" src="resources/icon/icon@2x.png" width="114" />
-    <icon height="72" src="resources/icon/icon-72.png" width="72" />
-    <icon height="144" src="resources/icon/icon-72@2x.png" width="144" />
-    <icon height="29" src="resources/icon/icon-small.png" width="29" />
-    <icon height="58" src="resources/icon/icon-small@2x.png" width="58" />
-    <icon height="48" src="resources/icon/icon-48.png" width="48" />
-    <icon height="96" src="resources/icon/icon-96.png" width="96" />
-    <icon height="144" src="resources/icon/icon-144.png" width="144" />
-    <icon height="192" src="resources/icon/icon-192.png" width="192" />
-    <icon height="512" src="resources/icon/icon-512.png" width="512" />
+    <icon src="ios-icon.png" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
 </widget>
