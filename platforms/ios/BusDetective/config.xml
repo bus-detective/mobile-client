@@ -1,16 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.teamgaslight.busdetective" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <preference name="AllowInlineMediaPlayback" value="false" />
-    <preference name="BackupWebStorage" value="cloud" />
-    <preference name="DisallowOverscroll" value="false" />
-    <preference name="EnableViewportScale" value="false" />
-    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
-    <preference name="MediaPlaybackRequiresUserAction" value="false" />
-    <preference name="SuppressesIncrementalRendering" value="false" />
-    <preference name="GapBetweenPages" value="0" />
-    <preference name="PageLength" value="0" />
-    <preference name="PaginationBreakingMode" value="page" />
-    <preference name="PaginationMode" value="unpaginated" />
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
@@ -21,11 +10,18 @@
         <param name="ios-package" value="CDVStatusBar" />
         <param name="onload" value="true" />
     </feature>
-    <preference name="StatusBarOverlaysWebView" value="true" />
     <feature name="SplashScreen">
         <param name="ios-package" value="CDVSplashScreen" />
         <param name="onload" value="true" />
     </feature>
+    <name>BusDetective</name>
+    <description>Find your bus!</description>
+    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
+    <content src="http://app.busdetective.com" />
+    <allow-navigation href="*://*.busdetective.com/*" />
+    <allow-intent href="mailto:*" />
+    <access origin="*" />
+    <icon src="ios-icon.png" />
     <splash height="480" src="resources/splash/Default~iphone.png" width="320" />
     <splash height="960" src="resources/splash/Default@2x~iphone.png" width="640" />
     <splash height="1024" src="resources/splash/Default-Portrait~ipad.png" width="768" />
@@ -46,18 +42,21 @@
     <icon height="144" src="resources/icon/ios/icon-72@2x.png" width="144" />
     <icon height="29" src="resources/icon/ios/icon-small.png" width="29" />
     <icon height="58" src="resources/icon/ios/icon-small@2x.png" width="58" />
-    <name>BusDetective</name>
-    <description>Find your bus!</description>
-    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
-    <content src="http://app.busdetective.com" />
-    <allow-navigation href="*://*.busdetective.com/*" />
-    <access origin="*" />
-    <preference name="Orientation" value="portrait" />
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="false" />
+    <preference name="EnableViewportScale" value="true" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="Orientation" value="portrait" />
     <preference name="StatusBarBackgroundColor" value="#444444" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="EnableViewportScale" value="true" />
-    <icon src="ios-icon.png" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
 </widget>

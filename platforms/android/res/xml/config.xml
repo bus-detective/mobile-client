@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.teamgaslight.busdetective" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <preference name="loglevel" value="DEBUG" />
     <feature name="StatusBar">
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
@@ -13,6 +12,14 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
+    <name>BusDetective</name>
+    <description>Find your bus!</description>
+    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
+    <content src="http://app.busdetective.com" />
+    <allow-navigation href="*://*.busdetective.com/*" />
+    <allow-intent href="mailto:*" />
+    <access origin="*" />
+    <icon src="ios-icon.png" />
     <splash density="hdpi" src="resources/splash/splash-android-hdpi.9.png" />
     <splash density="ldpi" src="resources/splash/splash-android-ldpi.9.png" />
     <splash density="mdpi" src="resources/splash/splash-android-mdpi.9.png" />
@@ -23,18 +30,12 @@
     <icon height="144" src="resources/icon/android/icon-144.png" width="144" />
     <icon height="192" src="resources/icon/android/icon-192.png" width="192" />
     <icon height="512" src="resources/icon/android/icon-512.png" width="512" />
-    <name>BusDetective</name>
-    <description>Find your bus!</description>
-    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
-    <content src="http://app.busdetective.com" />
-    <allow-navigation href="*://*.busdetective.com/*" />
-    <access origin="*" />
+    <preference name="loglevel" value="DEBUG" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#444444" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="EnableViewportScale" value="true" />
-    <icon src="ios-icon.png" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
 </widget>
