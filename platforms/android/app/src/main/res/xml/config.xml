@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.teamgaslight.busdetective" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.busdetective" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
@@ -17,9 +17,9 @@
     </feature>
     <name>BusDetective</name>
     <description>Find your bus!</description>
-    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
-    <content src="https://75c02d77c5c3.ngrok.io" />
-    <allow-navigation href="*://*.ngrok.io/*" />
+    <author email="hello@busdetective.com" href="https://busdetective.com">Bus Detective</author>
+    <content src="https://app.busdetective.com" />
+    <allow-navigation href="*://*.busdetective.com/*" />
     <allow-intent href="mailto:*" />
     <access origin="*" />
     <icon src="ios-icon.png" />

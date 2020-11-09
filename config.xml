@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.teamgaslight.busdetective" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.busdetective" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>BusDetective</name>
     <description>Find your bus!</description>
-    <author email="hello@teamgaslight.com" href="https://teamgaslight.com">Gaslight</author>
+    <author email="hello@busdetective.com" href="https://busdetective.com">Bus Detective</author>
 
     <content src="https://app.busdetective.com" />
 

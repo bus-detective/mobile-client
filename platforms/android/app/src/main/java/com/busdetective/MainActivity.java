@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.teamgaslight.busdetective;
+package com.busdetective;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
