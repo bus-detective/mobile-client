@@ -22,7 +22,6 @@ package org.apache.cordova;
 import java.util.List;
 
 import android.app.Activity;
-import android.util.Log;
 
 @Deprecated // Use Whitelist, CordovaPrefences, etc. directly.
 public class Config {
@@ -36,8 +35,8 @@ public class Config {
     public static void init(Activity action) {
         parser = new ConfigXmlParser();
         parser.parse(action);
+        //TODO: Add feature to bring this back.  Some preferences should be overridden by intents, but not all
         parser.getPreferences().setPreferencesBundle(action.getIntent().getExtras());
-        parser.getPreferences().copyIntoIntentExtras(action);
     }
 
     // Intended to be used for testing only; creates an empty configuration.
@@ -61,7 +60,7 @@ public class Config {
     public static List<PluginEntry> getPluginEntries() {
         return parser.getPluginEntries();
     }
-    
+
     public static CordovaPreferences getPreferences() {
         return parser.getPreferences();
     }

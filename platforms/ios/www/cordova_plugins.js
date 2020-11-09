@@ -1,61 +1,58 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
-module.exports = [
+  module.exports = [
     {
-        "file": "plugins/org.apache.cordova.geolocation/www/Coordinates.js",
-        "id": "org.apache.cordova.geolocation.Coordinates",
-        "pluginId": "org.apache.cordova.geolocation",
-        "clobbers": [
-            "Coordinates"
-        ]
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "clobbers": [
+        "navigator.splashscreen"
+      ]
     },
     {
-        "file": "plugins/org.apache.cordova.geolocation/www/PositionError.js",
-        "id": "org.apache.cordova.geolocation.PositionError",
-        "pluginId": "org.apache.cordova.geolocation",
-        "clobbers": [
-            "PositionError"
-        ]
+      "id": "cordova-plugin-geolocation.Coordinates",
+      "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "Coordinates"
+      ]
     },
     {
-        "file": "plugins/org.apache.cordova.geolocation/www/Position.js",
-        "id": "org.apache.cordova.geolocation.Position",
-        "pluginId": "org.apache.cordova.geolocation",
-        "clobbers": [
-            "Position"
-        ]
+      "id": "cordova-plugin-geolocation.PositionError",
+      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "PositionError"
+      ]
     },
     {
-        "file": "plugins/org.apache.cordova.geolocation/www/geolocation.js",
-        "id": "org.apache.cordova.geolocation.geolocation",
-        "pluginId": "org.apache.cordova.geolocation",
-        "clobbers": [
-            "navigator.geolocation"
-        ]
+      "id": "cordova-plugin-geolocation.Position",
+      "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "Position"
+      ]
     },
     {
-        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
-        "id": "org.apache.cordova.statusbar.statusbar",
-        "pluginId": "org.apache.cordova.statusbar",
-        "clobbers": [
-            "window.StatusBar"
-        ]
+      "id": "cordova-plugin-geolocation.geolocation",
+      "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "navigator.geolocation"
+      ]
     },
     {
-        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "id": "cordova-plugin-splashscreen.SplashScreen",
-        "pluginId": "cordova-plugin-splashscreen",
-        "clobbers": [
-            "navigator.splashscreen"
-        ]
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
     }
-];
-module.exports.metadata = 
-// TOP OF METADATA
-{
-    "org.apache.cordova.geolocation": "0.3.12",
-    "org.apache.cordova.statusbar": "0.1.11-dev",
-    "cordova-plugin-whitelist": "1.0.1-dev",
-    "cordova-plugin-splashscreen": "2.0.0"
-}
-// BOTTOM OF METADATA
+  ];
+  module.exports.metadata = {
+    "cordova-plugin-splashscreen": "2.0.0",
+    "cordova-plugin-geolocation": "4.0.2",
+    "cordova-plugin-whitelist": "1.3.4",
+    "cordova-plugin-statusbar": "2.4.3"
+  };
 });

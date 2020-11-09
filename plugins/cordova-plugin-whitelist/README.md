@@ -1,46 +1,56 @@
-<!---
- license: Licensed to the Apache Software Foundation (ASF) under one
-         or more contributor license agreements.  See the NOTICE file
-         distributed with this work for additional information
-         regarding copyright ownership.  The ASF licenses this file
-         to you under the Apache License, Version 2.0 (the
-         "License"); you may not use this file except in compliance
-         with the License.  You may obtain a copy of the License at
-
-           http://www.apache.org/licenses/LICENSE-2.0
-
-         Unless required by applicable law or agreed to in writing,
-         software distributed under the License is distributed on an
-         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-         KIND, either express or implied.  See the License for the
-         specific language governing permissions and limitations
-         under the License.
+---
+title: Whitelist
+description: Whitelist external content accessible by your app.
+---
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
 -->
 
 # cordova-plugin-whitelist
 
 This plugin implements a whitelist policy for navigating the application webview on Cordova 4.0
 
+## Installation
+
+You can install whitelist plugin with Cordova CLI, from npm:
+
+```
+$ cordova plugin add cordova-plugin-whitelist
+$ cordova prepare
+```
+
 ## Supported Cordova Platforms
 
 * Android 4.0.0 or above
-* iOS 4.0.0 or above
 
 ## Navigation Whitelist
+
 Controls which URLs the WebView itself can be navigated to. Applies to
 top-level navigations only.
 
-Quirks: on Android it also applies to iframes for non-http(s) schemes.
-
-By default, navigations only to `file://` URLs, are allowed. To allow other
-other URLs, you must add `<allow-navigation>` tags to your `config.xml`:
+By default navigations are only allowed to `file://` URLs. To allow others URLs, you must add `<allow-navigation>` tags to your `config.xml`:
 
     <!-- Allow links to example.com -->
     <allow-navigation href="http://example.com/*" />
 
     <!-- Wildcards are allowed for the protocol, as a prefix
          to the host, or as a suffix to the path -->
-    <allow-havigation href="*://*.example.com/*" />
+    <allow-navigation href="*://*.example.com/*" />
 
     <!-- A wildcard can be used to whitelist the entire network,
          over HTTP and HTTPS.
@@ -52,13 +62,11 @@ other URLs, you must add `<allow-navigation>` tags to your `config.xml`:
     <allow-navigation href="https://*/*" />
     <allow-navigation href="data:*" />
 
+Quirks: on Android it also applies to iframes for non-http(s) schemes.
+
 ## Intent Whitelist
+
 Controls which URLs the app is allowed to ask the system to open.
-By default, no external URLs are allowed.
-
-On Android, this equates to sending an intent of type BROWSEABLE.
-
-This whitelist does not apply to plugins, only hyperlinks and calls to `window.open()`.
 
 In `config.xml`, add `<allow-intent>` tags, like this:
 
@@ -86,7 +94,16 @@ In `config.xml`, add `<allow-intent>` tags, like this:
          *NOT RECOMMENDED* -->
     <allow-intent href="*" />
 
+Without any `<allow-intent>` tags, no requests to external URLs are allowed. However, the default Cordova application includes a quite liberal set of `allow-intent` entries by default. It is advised to narrow this down based on each app's needs.
+
+On Android, this equates to sending an intent of type BROWSEABLE.
+
+This whitelist does not apply to plugins, only hyperlinks and calls to `window.open()`.
+
+Note: `allow-navigation` takes precedence over `allow-intent`. Allowing navigation to all URLs with `<allow-navigation href="*" />` for example has the side effect of "capturing" all intents, so the webview navigates to them instead of triggering e.g. external apps.
+
 ## Network Request Whitelist
+
 Controls which network requests (images, XHRs, etc) are allowed to be made (via cordova native hooks).
 
 Note: We suggest you use a Content Security Policy (see below), which is more secure.  This whitelist is mostly historical for webviews which do not support CSP.
@@ -111,9 +128,12 @@ In `config.xml`, add `<access>` tags, like this:
 
 Without any `<access>` tags, only requests to `file://` URLs are allowed. However, the default Cordova application includes `<access origin="*">` by default.
 
+Note: Whitelist cannot block network redirects from a whitelisted remote website (i.e. http or https) to a non-whitelisted website. Use CSP rules to mitigate redirects to non-whitelisted websites for webviews that support CSP.
+
 Quirk: Android also allows requests to https://ssl.gstatic.com/accessibility/javascript/android/ by default, since this is required for TalkBack to function properly.
 
 ### Content Security Policy
+
 Controls which network requests (images, XHRs, etc) are allowed to be made (via webview directly).
 
 On Android and iOS, the network request whitelist (see above) is not able to filter all types of requests (e.g. `<video>` & WebSockets are not blocked). So, in addition to the whitelist, you should use a [Content Security Policy](http://content-security-policy.com/) `<meta>` tag on all of your pages.
@@ -131,13 +151,16 @@ Here are some example CSP declarations for your `.html` pages:
     -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">
 
-    <!-- Allow requests to foo.com -->
+    <!-- Allow everything but only from the same origin and foo.com -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">
 
-    <!-- Enable all requests, inline styles, and eval() -->
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval'">
+    <!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that 
+        * CSS only from the same origin and inline styles,
+        * scripts only from the same origin and inline styles, and eval()
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
-    <!-- Allow XHRs via https only -->
+    <!-- Allows XHRs only over HTTPS on the same domain. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">
 
     <!-- Allow iframe to https://cordova.apache.org/ -->

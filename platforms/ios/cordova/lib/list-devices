@@ -19,44 +19,10 @@
        under the License.
 */
 
-/*jshint node: true*/
+const { run } = require('./listDevices');
 
-var Q = require('Q'),
-    exec = require('child_process').exec;
-
-/**
- * Gets list of connected iOS devices
- * @return {Promise} Promise fulfilled with list of available iOS devices
- */
-function listDevices() {
-    var commands = [
-        Q.nfcall(exec, 'system_profiler SPUSBDataType | sed -n -e \'/iPad/,/Serial/p\' | grep "Serial Number:" | awk -F ": " \'{print $2 " iPad"}\''),
-        Q.nfcall(exec, 'system_profiler SPUSBDataType | sed -n -e \'/iPhone/,/Serial/p\' | grep "Serial Number:" | awk -F ": " \'{print $2 " iPhone"}\''),
-        Q.nfcall(exec, 'system_profiler SPUSBDataType | sed -n -e \'/iPod/,/Serial/p\' | grep "Serial Number:" | awk -F ": " \'{print $2 " iPod"}\'')
-    ];
-
-    // wrap al lexec calls into promises and wait until they're fullfilled
-    return Q.all(commands).then(function (promises) {
-        var accumulator = [];
-        promises.forEach(function (promise) {
-            if (promise.state === 'fulfilled') {
-                // Each command promise resolves with array [stout, stderr], and we need stdout only
-                // Append stdout lines to accumulator
-                accumulator.concat(promise.value[0].trim().split('\n'));
-            }
-        });
-        return accumulator;
+run().then(devices => {
+    devices.forEach(device => {
+        console.log(device);
     });
-}
-
-exports.run = listDevices;
-
-// Check if module is started as separate script.
-// If so, then invoke main method and print out results.
-if (!module.parent) {
-    listDevices().then(function (devices) {
-        devices.forEach(function (device) {
-            console.log(device);
-        });
-    });
-}
+});

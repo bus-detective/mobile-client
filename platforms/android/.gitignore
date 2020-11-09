@@ -4,16 +4,18 @@ local.properties
 /gradlew
 /gradlew.bat
 /gradle
-/.gradle
-/CordovaLib/build
-/CordovaLib/CordovaLib.iml
 # Ant builds
 ant-build
 ant-gen
 # Eclipse builds
 gen
 out
-# Gradle builds
+# Gradle build artifacts
+.gradle
+.gradletasknamecache
 /build
+/CordovaLib/build
+/app/build
+gradle-app.setting
 # Android Studio
-/.idea
+.idea

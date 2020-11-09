@@ -18,10 +18,10 @@
 */
 package org.apache.cordova;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -92,6 +92,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
         init(cordova, new ArrayList<PluginEntry>(), new CordovaPreferences());
     }
 
+    @SuppressLint("Assert")
     @Override
     public void init(CordovaInterface cordova, List<PluginEntry> pluginEntries, CordovaPreferences preferences) {
         if (this.cordova != null) {
@@ -135,6 +136,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
         if (recreatePlugins) {
             // Don't re-initialize on first load.
             if (loadedUrl != null) {
+                appPlugin = null;
                 pluginManager.init();
             }
             loadedUrl = url;
@@ -214,8 +216,10 @@ public class CordovaWebViewImpl implements CordovaWebView {
                 // TODO: What about params?
                 // Load new URL
                 loadUrlIntoView(url, true);
+                return;
             } else {
                 LOG.w(TAG, "showWebPage: Refusing to load URL into webview since it is not in the <allow-navigation> whitelist. URL=" + url);
+                return;
             }
         }
         if (!pluginManager.shouldOpenExternalUrl(url)) {
@@ -240,24 +244,42 @@ public class CordovaWebViewImpl implements CordovaWebView {
         }
     }
 
+    private static class WrapperView extends FrameLayout {
+
+        private final CordovaWebViewEngine engine;
+
+        public WrapperView(Context context, CordovaWebViewEngine engine) {
+            super(context);
+            this.engine = engine;
+        }
+
+        @Override
+        public boolean dispatchKeyEvent(KeyEvent event) {
+            return engine.getView().dispatchKeyEvent(event);
+        }
+    }
+
     @Override
     @Deprecated
     public void showCustomView(View view, WebChromeClient.CustomViewCallback callback) {
         // This code is adapted from the original Android Browser code, licensed under the Apache License, Version 2.0
-        Log.d(TAG, "showing Custom View");
+        LOG.d(TAG, "showing Custom View");
         // if a view already exists then immediately terminate the new one
         if (mCustomView != null) {
             callback.onCustomViewHidden();
             return;
         }
 
+        WrapperView wrapperView = new WrapperView(getContext(), engine);
+        wrapperView.addView(view);
+
         // Store the view and its callback for later (to kill it properly)
-        mCustomView = view;
+        mCustomView = wrapperView;
         mCustomViewCallback = callback;
 
         // Add the custom view to its container.
         ViewGroup parent = (ViewGroup) engine.getView().getParent();
-        parent.addView(view, new FrameLayout.LayoutParams(
+        parent.addView(wrapperView, new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 Gravity.CENTER));
@@ -275,7 +297,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
     public void hideCustomView() {
         // This code is adapted from the original Android Browser code, licensed under the Apache License, Version 2.0
         if (mCustomView == null) return;
-        Log.d(TAG, "Hiding Custom View");
+        LOG.d(TAG, "Hiding Custom View");
 
         // Hide the custom view.
         mCustomView.setVisibility(View.GONE);
@@ -354,6 +376,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
             case KeyEvent.KEYCODE_VOLUME_DOWN:
             case KeyEvent.KEYCODE_VOLUME_UP:
             case KeyEvent.KEYCODE_BACK:
+            case KeyEvent.KEYCODE_MENU:
                 // TODO: Why are search and menu buttons handled separately?
                 if (override) {
                     boundKeyCodes.add(keyCode);
@@ -445,7 +468,10 @@ public class CordovaWebViewImpl implements CordovaWebView {
         // Resume JavaScript timers. This affects all webviews within the app!
         engine.setPaused(false);
         this.pluginManager.onResume(keepRunning);
-        // To be the same as other platforms, fire this event only when resumed after a "pause".
+
+        // In order to match the behavior of the other platforms, we only send onResume after an
+        // onPause has occurred. The resume event might still be sent if the Activity was killed
+        // while waiting for the result of an external Activity once the result is obtained
         if (hasPausedEver) {
             sendJavascriptEvent("resume");
         }
